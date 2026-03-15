@@ -3452,17 +3452,15 @@ export default function ASGRCPortal() {
             />
           )}
           {active === 'tracker' && <TrackerModule projects={projects} />}
-          {active !== 'dashboard' && active !== 'tracker' && (
-            <div
-              style={{ color: '#7D8590', textAlign: 'center', paddingTop: 60 }}
-            >
-              <div style={{ fontSize: 36, marginBottom: 12 }}>🔧</div>
-              <div style={{ fontSize: 14 }}>
-                {MOD_TITLES[active]} — connect your backend API and Business
-                Central OData endpoint to populate this module.
-              </div>
-            </div>
+          {active === 'tender' && <TenderPortalModule />}
+          {active === 'engineering' && <EngineeringPortalModule />}
+          {active === 'approvals' && (
+            <ApprovalsModule
+              approvals={approvals}
+              setApprovals={setApprovals}
+            />
           )}
+          {active === 'powerbi' && <PowerBIModule projects={projects} />}
         </main>
       </div>
 
