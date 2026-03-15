@@ -46,8 +46,8 @@ function getDocType(fname) {
   return (
     DOC_TYPES[ext] || {
       icon: ext.toUpperCase(),
-      bg: 'rgba(255,255,255,0.06)',
-      color: '#7D8590',
+      bg: 'var(--card-mid)',
+      color: 'var(--muted)',
     }
   )
 }
@@ -1004,7 +1004,7 @@ function ProgressBar({ pct, color }) {
   return (
     <div
       style={{
-        background: 'rgba(255,255,255,0.08)',
+        background: 'var(--border)',
         borderRadius: 4,
         height: 6,
         overflow: 'hidden',
@@ -1027,8 +1027,8 @@ function InfoCard({ label, value, accent, large, onClick, children }) {
     <div
       onClick={onClick}
       style={{
-        background: 'rgba(255,255,255,0.04)',
-        border: '1px solid rgba(255,255,255,0.08)',
+        background: 'var(--card)',
+        border: '1px solid var(--border)',
         borderRadius: 8,
         padding: '10px 13px',
         borderLeft: accent ? `3px solid ${accent}` : 'none',
@@ -1038,7 +1038,7 @@ function InfoCard({ label, value, accent, large, onClick, children }) {
       <div
         style={{
           fontSize: 10,
-          color: '#7D8590',
+          color: 'var(--muted)',
           textTransform: 'uppercase',
           letterSpacing: '0.05em',
           marginBottom: 3,
@@ -1051,7 +1051,7 @@ function InfoCard({ label, value, accent, large, onClick, children }) {
           style={{
             fontSize: large ? 20 : 13,
             fontWeight: 700,
-            color: accent || '#E6EDF3',
+            color: accent || 'var(--text)',
           }}
         >
           {value}
@@ -1069,12 +1069,12 @@ function Th({ children }) {
         padding: '9px 14px',
         fontSize: 10,
         fontWeight: 600,
-        color: '#7D8590',
+        color: 'var(--muted)',
         textAlign: 'left',
         textTransform: 'uppercase',
         letterSpacing: '0.06em',
-        borderBottom: '2px solid rgba(255,255,255,0.08)',
-        background: 'rgba(0,0,0,0.2)',
+        borderBottom: '2px solid var(--border)',
+        background: 'var(--depth)',
         whiteSpace: 'nowrap',
       }}
     >
@@ -1089,7 +1089,7 @@ function Td({ children, style }) {
       style={{
         padding: '9px 14px',
         fontSize: 12,
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid var(--border-sm)',
         verticalAlign: 'middle',
         ...style,
       }}
@@ -1116,7 +1116,7 @@ function DocPreviewModal({ doc, project, onClose }) {
       style={{
         position: 'fixed',
         inset: 0,
-        background: 'rgba(0,0,0,0.8)',
+        background: 'var(--overlay-heavy)',
         zIndex: 500,
         display: 'flex',
         alignItems: 'center',
@@ -1126,8 +1126,8 @@ function DocPreviewModal({ doc, project, onClose }) {
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
-          background: '#161B22',
-          border: '1px solid rgba(255,255,255,0.1)',
+          background: 'var(--surface)',
+          border: '1px solid var(--border-md)',
           borderRadius: 12,
           width: 640,
           maxWidth: '94vw',
@@ -1140,7 +1140,7 @@ function DocPreviewModal({ doc, project, onClose }) {
         <div
           style={{
             padding: '14px 18px',
-            borderBottom: '1px solid rgba(255,255,255,0.08)',
+            borderBottom: '1px solid var(--border)',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
@@ -1172,7 +1172,7 @@ function DocPreviewModal({ doc, project, onClose }) {
               style={{
                 fontSize: 13,
                 fontWeight: 600,
-                color: '#E6EDF3',
+                color: 'var(--text)',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
                 whiteSpace: 'nowrap',
@@ -1187,9 +1187,9 @@ function DocPreviewModal({ doc, project, onClose }) {
               width: 28,
               height: 28,
               borderRadius: 6,
-              border: '1px solid rgba(255,255,255,0.1)',
-              background: 'rgba(255,255,255,0.04)',
-              color: '#7D8590',
+              border: '1px solid var(--border-md)',
+              background: 'var(--card)',
+              color: 'var(--muted)',
               fontSize: 15,
               cursor: 'pointer',
               flexShrink: 0,
@@ -1229,7 +1229,7 @@ function DocPreviewModal({ doc, project, onClose }) {
             <div
               style={{
                 fontSize: 10,
-                color: '#7D8590',
+                color: 'var(--muted)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em',
                 marginBottom: 6,
@@ -1243,7 +1243,7 @@ function DocPreviewModal({ doc, project, onClose }) {
             <div
               style={{
                 fontSize: 10,
-                color: '#7D8590',
+                color: 'var(--muted)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em',
                 marginBottom: 6,
@@ -1253,12 +1253,12 @@ function DocPreviewModal({ doc, project, onClose }) {
             </div>
             <div
               style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.08)',
+                background: 'var(--card)',
+                border: '1px solid var(--border)',
                 borderRadius: 8,
                 padding: '12px 14px',
                 fontSize: 13,
-                color: '#E6EDF3',
+                color: 'var(--text)',
                 lineHeight: 1.7,
               }}
             >
@@ -1267,19 +1267,19 @@ function DocPreviewModal({ doc, project, onClose }) {
           </div>
           <div
             style={{
-              background: 'rgba(255,255,255,0.03)',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'var(--card-dim)',
+              border: '1px solid var(--border)',
               borderRadius: 8,
               overflow: 'hidden',
             }}
           >
             <div
               style={{
-                background: 'rgba(255,255,255,0.04)',
+                background: 'var(--card)',
                 padding: '8px 14px',
-                borderBottom: '1px solid rgba(255,255,255,0.08)',
+                borderBottom: '1px solid var(--border)',
                 fontSize: 11,
-                color: '#7D8590',
+                color: 'var(--muted)',
                 display: 'flex',
                 justifyContent: 'space-between',
               }}
@@ -1309,7 +1309,7 @@ function DocPreviewModal({ doc, project, onClose }) {
               <div
                 style={{
                   fontSize: 11,
-                  color: '#7D8590',
+                  color: 'var(--muted)',
                   textAlign: 'center',
                   maxWidth: 320,
                 }}
@@ -1356,8 +1356,8 @@ function DocPreviewModal({ doc, project, onClose }) {
               style={{
                 marginLeft: 'auto',
                 background: 'none',
-                border: '1px solid rgba(255,255,255,0.1)',
-                color: '#7D8590',
+                border: '1px solid var(--border-md)',
+                color: 'var(--muted)',
                 borderRadius: 6,
                 padding: '8px 14px',
                 fontSize: 13,
@@ -1404,10 +1404,10 @@ function DocumentsTab({ project, onPreview }) {
           display: 'flex',
           alignItems: 'center',
           padding: '9px 14px',
-          borderBottom: '1px solid rgba(255,255,255,0.05)',
+          borderBottom: '1px solid var(--border-sm)',
           gap: 10,
           cursor: 'pointer',
-          background: hov ? 'rgba(255,255,255,0.03)' : '',
+          background: hov ? 'var(--card-dim)' : '',
         }}
       >
         <div
@@ -1432,7 +1432,7 @@ function DocumentsTab({ project, onPreview }) {
             style={{
               fontSize: 12.5,
               fontWeight: 600,
-              color: '#E6EDF3',
+              color: 'var(--text)',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
@@ -1442,7 +1442,7 @@ function DocumentsTab({ project, onPreview }) {
           >
             {doc.name}
           </div>
-          <div style={{ fontSize: 11, color: '#7D8590' }}>
+          <div style={{ fontSize: 11, color: 'var(--muted)' }}>
             {doc.type} · {doc.rev} · {doc.size} · {doc.date} · {doc.uploader}
           </div>
         </div>
@@ -1464,9 +1464,9 @@ function DocumentsTab({ project, onPreview }) {
             style={{
               padding: '3px 9px',
               borderRadius: 5,
-              border: '1px solid rgba(255,255,255,0.1)',
+              border: '1px solid var(--border-md)',
               background: 'none',
-              color: '#7D8590',
+              color: 'var(--muted)',
               fontSize: 11,
               cursor: 'pointer',
             }}
@@ -1478,9 +1478,9 @@ function DocumentsTab({ project, onPreview }) {
             style={{
               padding: '3px 9px',
               borderRadius: 5,
-              border: '1px solid rgba(255,255,255,0.1)',
+              border: '1px solid var(--border-md)',
               background: 'none',
-              color: '#7D8590',
+              color: 'var(--muted)',
               fontSize: 11,
               cursor: 'pointer',
             }}
@@ -1501,8 +1501,8 @@ function DocumentsTab({ project, onPreview }) {
     return (
       <div
         style={{
-          background: 'rgba(255,255,255,0.04)',
-          border: '1px solid rgba(255,255,255,0.08)',
+          background: 'var(--card)',
+          border: '1px solid var(--border)',
           borderRadius: 10,
           overflow: 'hidden',
           marginBottom: 8,
@@ -1520,14 +1520,14 @@ function DocumentsTab({ project, onPreview }) {
             padding: '10px 14px',
             cursor: 'pointer',
             gap: 8,
-            background: hov ? 'rgba(255,255,255,0.03)' : '',
+            background: hov ? 'var(--card-dim)' : '',
             userSelect: 'none',
           }}
         >
           <span
             style={{
               fontSize: 11,
-              color: '#7D8590',
+              color: 'var(--muted)',
               transform: isOpen ? 'rotate(90deg)' : '',
               display: 'inline-block',
               transition: 'transform .15s',
@@ -1538,11 +1538,16 @@ function DocumentsTab({ project, onPreview }) {
           </span>
           <span style={{ fontSize: 15 }}>📁</span>
           <span
-            style={{ fontSize: 13, fontWeight: 600, flex: 1, color: '#E6EDF3' }}
+            style={{
+              fontSize: 13,
+              fontWeight: 600,
+              flex: 1,
+              color: 'var(--text)',
+            }}
           >
             {folder.name}
           </span>
-          <span style={{ fontSize: 11, color: '#7D8590', marginRight: 8 }}>
+          <span style={{ fontSize: 11, color: 'var(--muted)', marginRight: 8 }}>
             {folder.docs.length} file{folder.docs.length !== 1 ? 's' : ''}
           </span>
           {pending > 0 && (
@@ -1552,8 +1557,8 @@ function DocumentsTab({ project, onPreview }) {
         {isOpen && (
           <div
             style={{
-              borderTop: '1px solid rgba(255,255,255,0.06)',
-              background: 'rgba(0,0,0,0.2)',
+              borderTop: '1px solid var(--border-sm)',
+              background: 'var(--depth)',
             }}
           >
             {folder.docs.map((d) => (
@@ -1585,7 +1590,7 @@ function DocumentsTab({ project, onPreview }) {
               top: '50%',
               transform: 'translateY(-50%)',
               fontSize: 13,
-              color: '#7D8590',
+              color: 'var(--muted)',
               pointerEvents: 'none',
             }}
           >
@@ -1596,9 +1601,9 @@ function DocumentsTab({ project, onPreview }) {
             onChange={(e) => setSearch(e.target.value)}
             placeholder='Search documents…'
             style={{
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              color: '#E6EDF3',
+              background: 'var(--border-sm)',
+              border: '1px solid var(--border-md)',
+              color: 'var(--text)',
               borderRadius: 8,
               padding: '7px 12px 7px 32px',
               fontSize: 13,
@@ -1620,9 +1625,9 @@ function DocumentsTab({ project, onPreview }) {
               style={{
                 padding: '5px 10px',
                 borderRadius: 6,
-                border: `1px solid ${active ? `${C.teal}80` : 'rgba(255,255,255,0.1)'}`,
-                background: active ? `${C.teal}20` : 'rgba(255,255,255,0.04)',
-                color: active ? C.teal : '#7D8590',
+                border: `1px solid ${active ? `${C.teal}80` : 'var(--border-md)'}`,
+                background: active ? `${C.teal}20` : 'var(--card)',
+                color: active ? C.teal : 'var(--muted)',
                 fontSize: 11.5,
                 fontWeight: active ? 600 : 400,
                 cursor: 'pointer',
@@ -1651,7 +1656,9 @@ function DocumentsTab({ project, onPreview }) {
 
       {isFiltering ? (
         <div>
-          <div style={{ fontSize: 12, color: '#7D8590', marginBottom: 10 }}>
+          <div
+            style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 10 }}
+          >
             {filtered.length} document{filtered.length !== 1 ? 's' : ''} found
             <button
               onClick={() => {
@@ -1673,8 +1680,8 @@ function DocumentsTab({ project, onPreview }) {
           </div>
           <div
             style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'var(--card)',
+              border: '1px solid var(--border)',
               borderRadius: 10,
               overflow: 'hidden',
             }}
@@ -1686,7 +1693,7 @@ function DocumentsTab({ project, onPreview }) {
                 style={{
                   padding: 30,
                   textAlign: 'center',
-                  color: '#7D8590',
+                  color: 'var(--muted)',
                   fontSize: 13,
                 }}
               >
@@ -1763,7 +1770,7 @@ function OverviewTab({ project: p, allDocs, pendingDocs, onDocuments }) {
           style={{
             fontSize: 11,
             fontWeight: 600,
-            color: '#7D8590',
+            color: 'var(--muted)',
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
             marginBottom: 12,
@@ -1793,7 +1800,7 @@ function OverviewTab({ project: p, allDocs, pendingDocs, onDocuments }) {
           style={{
             fontSize: 11,
             fontWeight: 600,
-            color: '#7D8590',
+            color: 'var(--muted)',
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
             marginBottom: 8,
@@ -1803,12 +1810,12 @@ function OverviewTab({ project: p, allDocs, pendingDocs, onDocuments }) {
         </div>
         <div
           style={{
-            background: 'rgba(255,255,255,0.04)',
-            border: '1px solid rgba(255,255,255,0.08)',
+            background: 'var(--card)',
+            border: '1px solid var(--border)',
             borderRadius: 8,
             padding: '12px 14px',
             fontSize: 13,
-            color: '#7D8590',
+            color: 'var(--muted)',
             lineHeight: 1.6,
           }}
         >
@@ -1820,7 +1827,7 @@ function OverviewTab({ project: p, allDocs, pendingDocs, onDocuments }) {
           style={{
             fontSize: 11,
             fontWeight: 600,
-            color: '#7D8590',
+            color: 'var(--muted)',
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
             marginBottom: 12,
@@ -1850,7 +1857,7 @@ function OverviewTab({ project: p, allDocs, pendingDocs, onDocuments }) {
             >
               {allDocs.length}
             </div>
-            <div style={{ fontSize: 11, color: '#7D8590', marginTop: 3 }}>
+            <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 3 }}>
               Click to open library
             </div>
           </InfoCard>
@@ -1869,7 +1876,7 @@ function OverviewTab({ project: p, allDocs, pendingDocs, onDocuments }) {
             >
               {pendingDocs}
             </div>
-            <div style={{ fontSize: 11, color: '#7D8590', marginTop: 3 }}>
+            <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 3 }}>
               Awaiting approval
             </div>
           </InfoCard>
@@ -1888,7 +1895,7 @@ function OverviewTab({ project: p, allDocs, pendingDocs, onDocuments }) {
             >
               {allDocs.length - pendingDocs}
             </div>
-            <div style={{ fontSize: 11, color: '#7D8590', marginTop: 3 }}>
+            <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 3 }}>
               Click to browse
             </div>
           </InfoCard>
@@ -1899,7 +1906,7 @@ function OverviewTab({ project: p, allDocs, pendingDocs, onDocuments }) {
           style={{
             fontSize: 11,
             fontWeight: 600,
-            color: '#7D8590',
+            color: 'var(--muted)',
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
             marginBottom: 12,
@@ -1935,7 +1942,9 @@ function OverviewTab({ project: p, allDocs, pendingDocs, onDocuments }) {
                 {v}
               </div>
               <ProgressBar pct={Math.round((v / p.panels) * 100)} color={c} />
-              <div style={{ fontSize: 10, color: '#7D8590', marginTop: 3 }}>
+              <div
+                style={{ fontSize: 10, color: 'var(--muted)', marginTop: 3 }}
+              >
                 {Math.round((v / p.panels) * 100)}%
               </div>
             </InfoCard>
@@ -1953,7 +1962,7 @@ function MilestonesTab({ project: p }) {
         style={{
           fontSize: 11,
           fontWeight: 600,
-          color: '#7D8590',
+          color: 'var(--muted)',
           textTransform: 'uppercase',
           letterSpacing: '0.08em',
           marginBottom: 12,
@@ -1963,8 +1972,8 @@ function MilestonesTab({ project: p }) {
       </div>
       <div
         style={{
-          background: 'rgba(255,255,255,0.04)',
-          border: '1px solid rgba(255,255,255,0.08)',
+          background: 'var(--card)',
+          border: '1px solid var(--border)',
           borderRadius: 10,
           overflow: 'hidden',
         }}
@@ -1983,7 +1992,7 @@ function MilestonesTab({ project: p }) {
                 padding: '12px 16px',
                 borderBottom:
                   i < p.milestones.length - 1
-                    ? '1px solid rgba(255,255,255,0.06)'
+                    ? '1px solid var(--border-sm)'
                     : 'none',
               }}
             >
@@ -2011,12 +2020,14 @@ function MilestonesTab({ project: p }) {
                   style={{
                     fontSize: 13,
                     fontWeight: done || next ? 600 : 400,
-                    color: done || next ? '#E6EDF3' : '#7D8590',
+                    color: done || next ? 'var(--text)' : 'var(--muted)',
                   }}
                 >
                   {m.label}
                 </div>
-                <div style={{ fontSize: 11, color: '#7D8590', marginTop: 2 }}>
+                <div
+                  style={{ fontSize: 11, color: 'var(--muted)', marginTop: 2 }}
+                >
                   {m.date}
                 </div>
               </div>
@@ -2082,8 +2093,8 @@ function BillingTab({ project: p }) {
       </div>
       <div
         style={{
-          background: 'rgba(255,255,255,0.04)',
-          border: '1px solid rgba(255,255,255,0.08)',
+          background: 'var(--card)',
+          border: '1px solid var(--border)',
           borderRadius: 10,
           overflow: 'hidden',
         }}
@@ -2104,7 +2115,7 @@ function BillingTab({ project: p }) {
                   {b.invoice}
                 </Td>
                 <Td style={{ fontWeight: 600 }}>{b.amount}</Td>
-                <Td style={{ color: '#7D8590' }}>{b.submitted}</Td>
+                <Td style={{ color: 'var(--muted)' }}>{b.submitted}</Td>
                 <Td>
                   <Badge
                     label={
@@ -2144,7 +2155,7 @@ function TeamTab({ project: p }) {
         style={{
           fontSize: 11,
           fontWeight: 600,
-          color: '#7D8590',
+          color: 'var(--muted)',
           textTransform: 'uppercase',
           letterSpacing: '0.08em',
           marginBottom: 12,
@@ -2157,8 +2168,8 @@ function TeamTab({ project: p }) {
           <div
             key={t.name}
             style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'var(--card)',
+              border: '1px solid var(--border)',
               borderRadius: 8,
               padding: '12px 16px',
               display: 'flex',
@@ -2190,7 +2201,9 @@ function TeamTab({ project: p }) {
             </div>
             <div style={{ flex: 1 }}>
               <div style={{ fontSize: 13, fontWeight: 600 }}>{t.name}</div>
-              <div style={{ fontSize: 12, color: '#7D8590' }}>{t.role}</div>
+              <div style={{ fontSize: 12, color: 'var(--muted)' }}>
+                {t.role}
+              </div>
             </div>
             <Badge label={t.dept} color={C.teal} />
           </div>
@@ -2218,8 +2231,8 @@ function PanelsTab({ project: p, onOpenTracker }) {
                 alignItems: 'center',
                 gap: 4,
                 padding: '3px 9px',
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.08)',
+                background: 'var(--card)',
+                border: '1px solid var(--border)',
                 borderRadius: 5,
                 fontSize: 11,
               }}
@@ -2240,8 +2253,8 @@ function PanelsTab({ project: p, onOpenTracker }) {
       </div>
       <div
         style={{
-          background: 'rgba(255,255,255,0.04)',
-          border: '1px solid rgba(255,255,255,0.08)',
+          background: 'var(--card)',
+          border: '1px solid var(--border)',
           borderRadius: 10,
           padding: 14,
         }}
@@ -2249,7 +2262,7 @@ function PanelsTab({ project: p, onOpenTracker }) {
         <div
           style={{
             fontSize: 11,
-            color: '#7D8590',
+            color: 'var(--muted)',
             marginBottom: 10,
             fontWeight: 600,
           }}
@@ -2268,7 +2281,11 @@ function PanelsTab({ project: p, onOpenTracker }) {
           {Array.from({ length: 14 }, (_, i) => (
             <div
               key={i}
-              style={{ textAlign: 'center', fontSize: 9, color: '#7D8590' }}
+              style={{
+                textAlign: 'center',
+                fontSize: 9,
+                color: 'var(--muted)',
+              }}
             >
               G{i + 1}
             </div>
@@ -2290,7 +2307,7 @@ function PanelsTab({ project: p, onOpenTracker }) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontSize: 9,
-                color: '#7D8590',
+                color: 'var(--muted)',
                 fontWeight: 600,
               }}
             >
@@ -2379,7 +2396,7 @@ function ProjectDrawer({ project, onClose, onNavigate }) {
         style={{
           position: 'fixed',
           inset: 0,
-          background: 'rgba(0,0,0,0.65)',
+          background: 'var(--overlay)',
           zIndex: 200,
         }}
       />
@@ -2392,20 +2409,20 @@ function ProjectDrawer({ project, onClose, onNavigate }) {
           bottom: 0,
           width: 820,
           maxWidth: '96vw',
-          background: '#0D1117',
-          borderLeft: '1px solid rgba(255,255,255,0.08)',
+          background: 'var(--bg)',
+          borderLeft: '1px solid var(--border)',
           zIndex: 201,
           display: 'flex',
           flexDirection: 'column',
-          boxShadow: '-8px 0 40px rgba(0,0,0,.6)',
+          boxShadow: 'var(--drawer-shadow, -8px 0 24px rgba(0,0,0,.15))',
         }}
       >
         {/* Header */}
         <div
           style={{
             padding: '16px 22px',
-            borderBottom: '1px solid rgba(255,255,255,0.08)',
-            background: '#161B22',
+            borderBottom: '1px solid var(--border)',
+            background: 'var(--surface)',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'flex-start',
@@ -2422,14 +2439,14 @@ function ProjectDrawer({ project, onClose, onNavigate }) {
               }}
             >
               <Badge label={project.status} color={pCol(project.status)} />
-              <span style={{ fontSize: 11, color: '#7D8590' }}>
+              <span style={{ fontSize: 11, color: 'var(--muted)' }}>
                 {project.id} · {project.bcJob} (BC)
               </span>
             </div>
             <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 2 }}>
               {project.name}
             </div>
-            <div style={{ fontSize: 12, color: '#7D8590' }}>
+            <div style={{ fontSize: 12, color: 'var(--muted)' }}>
               {project.client} · {project.address}
             </div>
           </div>
@@ -2439,9 +2456,9 @@ function ProjectDrawer({ project, onClose, onNavigate }) {
               width: 30,
               height: 30,
               borderRadius: 6,
-              border: '1px solid rgba(255,255,255,0.1)',
-              background: 'rgba(255,255,255,0.04)',
-              color: '#7D8590',
+              border: '1px solid var(--border-md)',
+              background: 'var(--card)',
+              color: 'var(--muted)',
               fontSize: 16,
               cursor: 'pointer',
               display: 'flex',
@@ -2458,9 +2475,9 @@ function ProjectDrawer({ project, onClose, onNavigate }) {
           style={{
             display: 'flex',
             gap: 2,
-            borderBottom: '1px solid rgba(255,255,255,0.08)',
+            borderBottom: '1px solid var(--border)',
             padding: '0 22px',
-            background: '#161B22',
+            background: 'var(--surface)',
             flexShrink: 0,
             overflowX: 'auto',
           }}
@@ -2479,7 +2496,7 @@ function ProjectDrawer({ project, onClose, onNavigate }) {
                   fontWeight: isActive ? 600 : 500,
                   border: 'none',
                   background: 'none',
-                  color: isActive ? C.teal : '#7D8590',
+                  color: isActive ? C.teal : 'var(--muted)',
                   borderBottom: `2px solid ${isActive ? C.teal : 'transparent'}`,
                   marginBottom: -1,
                   cursor: 'pointer',
@@ -2566,8 +2583,8 @@ function DashboardModule({ projects, approvals, onOpenProject }) {
           <div
             key={l}
             style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'var(--card)',
+              border: '1px solid var(--border)',
               borderRadius: 10,
               padding: '14px 16px',
               borderLeft: `3px solid ${a}`,
@@ -2576,7 +2593,7 @@ function DashboardModule({ projects, approvals, onOpenProject }) {
             <div
               style={{
                 fontSize: 10,
-                color: '#7D8590',
+                color: 'var(--muted)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.06em',
                 marginBottom: 3,
@@ -2587,7 +2604,7 @@ function DashboardModule({ projects, approvals, onOpenProject }) {
             <div style={{ fontSize: 24, fontWeight: 700, color: a }}>
               {v} <span style={{ fontSize: 16 }}>{ic}</span>
             </div>
-            <div style={{ fontSize: 11, color: '#7D8590', marginTop: 3 }}>
+            <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 3 }}>
               {sub}
             </div>
           </div>
@@ -2600,8 +2617,8 @@ function DashboardModule({ projects, approvals, onOpenProject }) {
         {/* Project cards */}
         <div
           style={{
-            background: 'rgba(255,255,255,0.04)',
-            border: '1px solid rgba(255,255,255,0.08)',
+            background: 'var(--card)',
+            border: '1px solid var(--border)',
             borderRadius: 10,
             overflow: 'hidden',
           }}
@@ -2609,7 +2626,7 @@ function DashboardModule({ projects, approvals, onOpenProject }) {
           <div
             style={{
               padding: '12px 18px',
-              borderBottom: '1px solid rgba(255,255,255,0.08)',
+              borderBottom: '1px solid var(--border)',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
@@ -2618,7 +2635,7 @@ function DashboardModule({ projects, approvals, onOpenProject }) {
             <span style={{ fontSize: 13, fontWeight: 600 }}>
               Active Projects
             </span>
-            <span style={{ fontSize: 11, color: '#7D8590' }}>
+            <span style={{ fontSize: 11, color: 'var(--muted)' }}>
               Double-click or View Details to drill in
             </span>
           </div>
@@ -2640,8 +2657,8 @@ function DashboardModule({ projects, approvals, onOpenProject }) {
           {/* Pending approvals */}
           <div
             style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'var(--card)',
+              border: '1px solid var(--border)',
               borderRadius: 10,
               overflow: 'hidden',
             }}
@@ -2649,7 +2666,7 @@ function DashboardModule({ projects, approvals, onOpenProject }) {
             <div
               style={{
                 padding: '12px 18px',
-                borderBottom: '1px solid rgba(255,255,255,0.08)',
+                borderBottom: '1px solid var(--border)',
                 fontSize: 13,
                 fontWeight: 600,
               }}
@@ -2671,8 +2688,8 @@ function DashboardModule({ projects, approvals, onOpenProject }) {
                     key={a.id}
                     style={{
                       padding: 10,
-                      background: 'rgba(0,0,0,0.2)',
-                      border: `1px solid ${a.status === 'action' ? `${C.red}60` : 'rgba(255,255,255,0.07)'}`,
+                      background: 'var(--depth)',
+                      border: `1px solid ${a.status === 'action' ? `${C.red}60` : 'var(--border)'}`,
                       borderRadius: 7,
                       display: 'flex',
                       justifyContent: 'space-between',
@@ -2683,7 +2700,7 @@ function DashboardModule({ projects, approvals, onOpenProject }) {
                       <div style={{ fontSize: 12, fontWeight: 600 }}>
                         {a.doc}
                       </div>
-                      <div style={{ fontSize: 11, color: '#7D8590' }}>
+                      <div style={{ fontSize: 11, color: 'var(--muted)' }}>
                         {a.type}
                       </div>
                     </div>
@@ -2695,7 +2712,11 @@ function DashboardModule({ projects, approvals, onOpenProject }) {
                         color={a.status === 'action' ? C.red : C.amber}
                       />
                       <div
-                        style={{ fontSize: 10, color: '#7D8590', marginTop: 3 }}
+                        style={{
+                          fontSize: 10,
+                          color: 'var(--muted)',
+                          marginTop: 3,
+                        }}
                       >
                         Day {a.days}
                       </div>
@@ -2707,8 +2728,8 @@ function DashboardModule({ projects, approvals, onOpenProject }) {
           {/* Enquiry pipeline */}
           <div
             style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'var(--card)',
+              border: '1px solid var(--border)',
               borderRadius: 10,
               overflow: 'hidden',
             }}
@@ -2716,7 +2737,7 @@ function DashboardModule({ projects, approvals, onOpenProject }) {
             <div
               style={{
                 padding: '12px 18px',
-                borderBottom: '1px solid rgba(255,255,255,0.08)',
+                borderBottom: '1px solid var(--border)',
                 fontSize: 13,
                 fontWeight: 600,
               }}
@@ -2753,7 +2774,7 @@ function DashboardModule({ projects, approvals, onOpenProject }) {
                   <div
                     style={{
                       width: 80,
-                      background: 'rgba(255,255,255,0.06)',
+                      background: 'var(--card-mid)',
                       borderRadius: 4,
                       height: 6,
                     }}
@@ -2806,8 +2827,8 @@ function ProjectCard({ project: p, onOpen }) {
       onKeyDown={(e) => e.key === 'Enter' && onOpen(p.id)}
       style={{
         padding: 14,
-        background: 'rgba(0,0,0,0.2)',
-        border: `1px solid ${hov ? `${C.teal}60` : 'rgba(255,255,255,0.07)'}`,
+        background: 'var(--depth)',
+        border: `1px solid ${hov ? `${C.teal}60` : 'var(--border)'}`,
         borderRadius: 9,
         cursor: 'pointer',
         position: 'relative',
@@ -2825,7 +2846,7 @@ function ProjectCard({ project: p, onOpen }) {
       >
         <div>
           <div style={{ fontSize: 13, fontWeight: 600 }}>{p.name}</div>
-          <div style={{ fontSize: 11, color: '#7D8590', marginTop: 2 }}>
+          <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 2 }}>
             {p.client} · {p.id} · PM: {p.pm}
           </div>
         </div>
@@ -2872,10 +2893,10 @@ function ProjectCard({ project: p, onOpen }) {
           marginTop: 4,
         }}
       >
-        <span style={{ fontSize: 11, color: '#7D8590' }}>
+        <span style={{ fontSize: 11, color: 'var(--muted)' }}>
           {p.panels} panels
         </span>
-        <span style={{ fontSize: 11, color: '#7D8590' }}>
+        <span style={{ fontSize: 11, color: 'var(--muted)' }}>
           {p.progress}% complete
         </span>
       </div>
@@ -2916,9 +2937,9 @@ function TrackerModule({ projects }) {
       >
         <select
           style={{
-            background: 'rgba(255,255,255,0.04)',
-            border: '1px solid rgba(255,255,255,0.1)',
-            color: '#E6EDF3',
+            background: 'var(--card)',
+            border: '1px solid var(--border-md)',
+            color: 'var(--text)',
             borderRadius: 7,
             padding: '7px 12px',
             fontSize: 13,
@@ -2930,7 +2951,7 @@ function TrackerModule({ projects }) {
             </option>
           ))}
         </select>
-        <span style={{ fontSize: 12, color: '#7D8590' }}>
+        <span style={{ fontSize: 12, color: 'var(--muted)' }}>
           420 panels · 68% complete · PM: Khalid Hassan
         </span>
         <button
@@ -2964,12 +2985,10 @@ function TrackerModule({ projects }) {
                 alignItems: 'center',
                 gap: 5,
                 padding: '4px 9px',
-                background: active
-                  ? `${STATUS_COLORS[si]}30`
-                  : 'rgba(255,255,255,0.04)',
-                border: `1px solid ${active ? STATUS_COLORS[si] : 'rgba(255,255,255,0.1)'}`,
+                background: active ? `${STATUS_COLORS[si]}30` : 'var(--card)',
+                border: `1px solid ${active ? STATUS_COLORS[si] : 'var(--border-md)'}`,
                 borderRadius: 6,
-                color: '#E6EDF3',
+                color: 'var(--text)',
                 fontSize: 12,
                 cursor: 'pointer',
               }}
@@ -2993,8 +3012,8 @@ function TrackerModule({ projects }) {
       >
         <div
           style={{
-            background: 'rgba(255,255,255,0.04)',
-            border: '1px solid rgba(255,255,255,0.08)',
+            background: 'var(--card)',
+            border: '1px solid var(--border)',
             borderRadius: 10,
             padding: 16,
           }}
@@ -3002,7 +3021,7 @@ function TrackerModule({ projects }) {
           <div
             style={{
               fontSize: 12,
-              color: '#7D8590',
+              color: 'var(--muted)',
               marginBottom: 10,
               fontWeight: 600,
             }}
@@ -3021,7 +3040,11 @@ function TrackerModule({ projects }) {
             {Array.from({ length: 14 }, (_, i) => (
               <div
                 key={i}
-                style={{ textAlign: 'center', fontSize: 9, color: '#7D8590' }}
+                style={{
+                  textAlign: 'center',
+                  fontSize: 9,
+                  color: 'var(--muted)',
+                }}
               >
                 G{i + 1}
               </div>
@@ -3043,7 +3066,7 @@ function TrackerModule({ projects }) {
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontSize: 9,
-                  color: '#7D8590',
+                  color: 'var(--muted)',
                   fontWeight: 600,
                 }}
               >
@@ -3062,7 +3085,7 @@ function TrackerModule({ projects }) {
                       height: 26,
                       borderRadius: 3,
                       background: dimmed
-                        ? 'rgba(255,255,255,0.06)'
+                        ? 'var(--card-mid)'
                         : STATUS_COLORS[panel.status],
                       border: `2px solid ${sel ? '#fff' : 'transparent'}`,
                       opacity: dimmed ? 0.2 : 1,
@@ -3081,8 +3104,8 @@ function TrackerModule({ projects }) {
         </div>
         <div
           style={{
-            background: 'rgba(255,255,255,0.04)',
-            border: '1px solid rgba(255,255,255,0.08)',
+            background: 'var(--card)',
+            border: '1px solid var(--border)',
             borderRadius: 10,
             padding: 16,
           }}
@@ -3095,7 +3118,13 @@ function TrackerModule({ projects }) {
               <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 4 }}>
                 Panel {selectedPanel.id}
               </div>
-              <div style={{ fontSize: 12, color: '#7D8590', marginBottom: 12 }}>
+              <div
+                style={{
+                  fontSize: 12,
+                  color: 'var(--muted)',
+                  marginBottom: 12,
+                }}
+              >
                 Floor: {selectedPanel.floor}
               </div>
               <div style={{ marginBottom: 14 }}>
@@ -3108,7 +3137,7 @@ function TrackerModule({ projects }) {
                 style={{
                   fontSize: 11,
                   fontWeight: 600,
-                  color: '#7D8590',
+                  color: 'var(--muted)',
                   marginBottom: 8,
                   textTransform: 'uppercase',
                   letterSpacing: '0.06em',
@@ -3132,7 +3161,7 @@ function TrackerModule({ projects }) {
                     alignItems: 'center',
                     gap: 8,
                     padding: '5px 0',
-                    borderBottom: '1px solid rgba(255,255,255,0.06)',
+                    borderBottom: '1px solid var(--border-sm)',
                   }}
                 >
                   <div
@@ -3144,8 +3173,8 @@ function TrackerModule({ projects }) {
                       alignItems: 'center',
                       justifyContent: 'center',
                       fontSize: 9,
-                      background: done ? '#1D834820' : 'rgba(255,255,255,0.06)',
-                      color: done ? C.green : '#7D8590',
+                      background: done ? '#1D834820' : 'var(--card-mid)',
+                      color: done ? C.green : 'var(--muted)',
                       fontWeight: 700,
                       flexShrink: 0,
                     }}
@@ -3155,7 +3184,7 @@ function TrackerModule({ projects }) {
                   <span
                     style={{
                       fontSize: 12,
-                      color: done ? '#E6EDF3' : '#7D8590',
+                      color: done ? 'var(--text)' : 'var(--muted)',
                     }}
                   >
                     {act}
@@ -3166,7 +3195,7 @@ function TrackerModule({ projects }) {
                 style={{
                   marginTop: 12,
                   fontSize: 11,
-                  color: '#7D8590',
+                  color: 'var(--muted)',
                   lineHeight: 1.7,
                 }}
               >
@@ -3178,7 +3207,7 @@ function TrackerModule({ projects }) {
           ) : (
             <div
               style={{
-                color: '#7D8590',
+                color: 'var(--muted)',
                 fontSize: 13,
                 textAlign: 'center',
                 paddingTop: 40,
@@ -3289,19 +3318,19 @@ function TenderPortalModule() {
   const cellS = {
     padding: '10px 14px',
     fontSize: 12,
-    borderBottom: '1px solid rgba(255,255,255,0.06)',
+    borderBottom: '1px solid var(--border-sm)',
     verticalAlign: 'middle',
   }
   const thS = {
     padding: '9px 14px',
     fontSize: 10,
     fontWeight: 600,
-    color: '#7D8590',
+    color: 'var(--muted)',
     textAlign: 'left',
     textTransform: 'uppercase',
     letterSpacing: '0.06em',
-    borderBottom: '2px solid rgba(255,255,255,0.08)',
-    background: 'rgba(0,0,0,0.2)',
+    borderBottom: '2px solid var(--border)',
+    background: 'var(--depth)',
     whiteSpace: 'nowrap',
   }
   return (
@@ -3319,9 +3348,9 @@ function TenderPortalModule() {
             <button
               key={l}
               style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.1)',
-                color: '#7D8590',
+                background: 'var(--card)',
+                border: '1px solid var(--border-md)',
+                color: 'var(--muted)',
                 borderRadius: 6,
                 padding: '5px 12px',
                 fontSize: 12,
@@ -3351,7 +3380,7 @@ function TenderPortalModule() {
       {showForm && (
         <div
           style={{
-            background: 'rgba(255,255,255,0.04)',
+            background: 'var(--card)',
             border: `1px solid ${C.teal}`,
             borderRadius: 10,
             padding: 20,
@@ -3377,7 +3406,11 @@ function TenderPortalModule() {
             ].map(([label, key, type, ph]) => (
               <div key={key}>
                 <div
-                  style={{ fontSize: 11, color: '#7D8590', marginBottom: 4 }}
+                  style={{
+                    fontSize: 11,
+                    color: 'var(--muted)',
+                    marginBottom: 4,
+                  }}
                 >
                   {label}
                 </div>
@@ -3389,9 +3422,9 @@ function TenderPortalModule() {
                     }
                     style={{
                       width: '100%',
-                      background: 'rgba(0,0,0,0.2)',
-                      border: '1px solid rgba(255,255,255,0.1)',
-                      color: '#E6EDF3',
+                      background: 'var(--depth)',
+                      border: '1px solid var(--border-md)',
+                      color: 'var(--text)',
                       borderRadius: 6,
                       padding: '7px 10px',
                       fontSize: 13,
@@ -3411,9 +3444,9 @@ function TenderPortalModule() {
                     }
                     style={{
                       width: '100%',
-                      background: 'rgba(0,0,0,0.2)',
-                      border: '1px solid rgba(255,255,255,0.1)',
-                      color: '#E6EDF3',
+                      background: 'var(--depth)',
+                      border: '1px solid var(--border-md)',
+                      color: 'var(--text)',
                       borderRadius: 6,
                       padding: '7px 10px',
                       fontSize: 13,
@@ -3445,8 +3478,8 @@ function TenderPortalModule() {
               onClick={() => setShowForm(false)}
               style={{
                 background: 'none',
-                border: '1px solid rgba(255,255,255,0.1)',
-                color: '#7D8590',
+                border: '1px solid var(--border-md)',
+                color: 'var(--muted)',
                 borderRadius: 6,
                 padding: '8px 14px',
                 fontSize: 13,
@@ -3460,8 +3493,8 @@ function TenderPortalModule() {
       )}
       <div
         style={{
-          background: 'rgba(255,255,255,0.04)',
-          border: '1px solid rgba(255,255,255,0.08)',
+          background: 'var(--card)',
+          border: '1px solid var(--border)',
           borderRadius: 10,
           overflow: 'hidden',
         }}
@@ -3490,8 +3523,7 @@ function TenderPortalModule() {
               <tr
                 key={e.id}
                 style={{
-                  background:
-                    i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.02)',
+                  background: i % 2 === 0 ? 'transparent' : 'var(--row-alt)',
                 }}
               >
                 <td style={{ ...cellS, color: C.ltBlue, fontWeight: 600 }}>
@@ -3499,15 +3531,17 @@ function TenderPortalModule() {
                 </td>
                 <td style={cellS}>{e.client}</td>
                 <td style={cellS}>{e.project}</td>
-                <td style={{ ...cellS, color: '#7D8590' }}>{e.received}</td>
-                <td style={{ ...cellS, color: '#7D8590' }}>{e.due}</td>
+                <td style={{ ...cellS, color: 'var(--muted)' }}>
+                  {e.received}
+                </td>
+                <td style={{ ...cellS, color: 'var(--muted)' }}>{e.due}</td>
                 <td style={cellS}>
                   <Badge label={sLbl(e.status)} color={sCol(e.status)} />
                 </td>
                 <td
                   style={{
                     ...cellS,
-                    color: e.gm === 'Approved' ? C.green : '#7D8590',
+                    color: e.gm === 'Approved' ? C.green : 'var(--muted)',
                     fontWeight: e.gm === 'Approved' ? 600 : 400,
                   }}
                 >
@@ -3628,18 +3662,18 @@ function EngineeringPortalModule() {
     padding: '9px 12px',
     fontSize: 10,
     fontWeight: 600,
-    color: '#7D8590',
+    color: 'var(--muted)',
     textAlign: 'left',
     textTransform: 'uppercase',
     letterSpacing: '0.06em',
     whiteSpace: 'nowrap',
-    borderBottom: '2px solid rgba(255,255,255,0.08)',
-    background: 'rgba(0,0,0,0.2)',
+    borderBottom: '2px solid var(--border)',
+    background: 'var(--depth)',
   }
   const tdS = {
     padding: '9px 12px',
     fontSize: 12,
-    borderBottom: '1px solid rgba(255,255,255,0.06)',
+    borderBottom: '1px solid var(--border-sm)',
     verticalAlign: 'middle',
   }
   return (
@@ -3667,8 +3701,8 @@ function EngineeringPortalModule() {
       </div>
       <div
         style={{
-          background: 'rgba(255,255,255,0.04)',
-          border: '1px solid rgba(255,255,255,0.08)',
+          background: 'var(--card)',
+          border: '1px solid var(--border)',
           borderRadius: 10,
           overflow: 'hidden',
         }}
@@ -3676,7 +3710,7 @@ function EngineeringPortalModule() {
         <div
           style={{
             padding: '13px 18px',
-            borderBottom: '1px solid rgba(255,255,255,0.08)',
+            borderBottom: '1px solid var(--border)',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
@@ -3726,8 +3760,7 @@ function EngineeringPortalModule() {
                 <tr
                   key={d.id}
                   style={{
-                    background:
-                      i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.02)',
+                    background: i % 2 === 0 ? 'transparent' : 'var(--row-alt)',
                   }}
                 >
                   <td
@@ -3747,19 +3780,31 @@ function EngineeringPortalModule() {
                       color={d.type === 'Shop Drawing' ? C.ltBlue : C.purple}
                     />
                   </td>
-                  <td style={{ ...tdS, color: '#7D8590' }}>{d.rev}</td>
+                  <td style={{ ...tdS, color: 'var(--muted)' }}>{d.rev}</td>
                   <td
-                    style={{ ...tdS, color: '#7D8590', whiteSpace: 'nowrap' }}
+                    style={{
+                      ...tdS,
+                      color: 'var(--muted)',
+                      whiteSpace: 'nowrap',
+                    }}
                   >
                     {d.project}
                   </td>
                   <td
-                    style={{ ...tdS, color: '#7D8590', whiteSpace: 'nowrap' }}
+                    style={{
+                      ...tdS,
+                      color: 'var(--muted)',
+                      whiteSpace: 'nowrap',
+                    }}
                   >
                     {d.submitted}
                   </td>
                   <td
-                    style={{ ...tdS, color: '#7D8590', whiteSpace: 'nowrap' }}
+                    style={{
+                      ...tdS,
+                      color: 'var(--muted)',
+                      whiteSpace: 'nowrap',
+                    }}
                   >
                     {d.approved}
                   </td>
@@ -3770,7 +3815,7 @@ function EngineeringPortalModule() {
                     {d.fab ? (
                       <span style={{ color: C.green }}>✓</span>
                     ) : (
-                      <span style={{ color: 'rgba(255,255,255,0.15)' }}>—</span>
+                      <span style={{ color: 'var(--faint)' }}>—</span>
                     )}
                   </td>
                 </tr>
@@ -3829,8 +3874,8 @@ function ApprovalsModule({ approvals, setApprovals }) {
             <div
               key={a.id}
               style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: `1px solid ${a.status === 'action' ? C.red + '60' : 'rgba(255,255,255,0.08)'}`,
+                background: 'var(--card)',
+                border: `1px solid ${a.status === 'action' ? C.red + '60' : 'var(--border)'}`,
                 borderRadius: 10,
                 overflow: 'hidden',
               }}
@@ -3873,12 +3918,18 @@ function ApprovalsModule({ approvals, setApprovals }) {
                               : C.amber
                       }
                     />
-                    <span style={{ fontSize: 11, color: '#7D8590' }}>
+                    <span style={{ fontSize: 11, color: 'var(--muted)' }}>
                       Day {a.days} of review
                     </span>
                   </div>
                   <div style={{ fontSize: 14, fontWeight: 600 }}>{a.doc}</div>
-                  <div style={{ fontSize: 12, color: '#7D8590', marginTop: 2 }}>
+                  <div
+                    style={{
+                      fontSize: 12,
+                      color: 'var(--muted)',
+                      marginTop: 2,
+                    }}
+                  >
                     {a.project} · {a.by} · {a.date}
                   </div>
                 </div>
@@ -3925,7 +3976,7 @@ function ApprovalsModule({ approvals, setApprovals }) {
                 <div
                   style={{
                     padding: '0 18px 14px',
-                    borderTop: '1px solid rgba(255,255,255,0.06)',
+                    borderTop: '1px solid var(--border-sm)',
                     paddingTop: 10,
                   }}
                 >
@@ -3937,9 +3988,9 @@ function ApprovalsModule({ approvals, setApprovals }) {
                     }
                     style={{
                       width: '100%',
-                      background: 'rgba(0,0,0,0.2)',
-                      border: '1px solid rgba(255,255,255,0.1)',
-                      color: '#E6EDF3',
+                      background: 'var(--depth)',
+                      border: '1px solid var(--border-md)',
+                      color: 'var(--text)',
                       borderRadius: 6,
                       padding: '7px 10px',
                       fontSize: 12,
@@ -3986,7 +4037,7 @@ function PowerBIModule({ projects }) {
             >
               {v} <span style={{ fontSize: 16 }}>{ic}</span>
             </div>
-            <div style={{ fontSize: 11, color: '#7D8590', marginTop: 3 }}>
+            <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 3 }}>
               {sub}
             </div>
           </InfoCard>
@@ -3997,8 +4048,8 @@ function PowerBIModule({ projects }) {
       >
         <div
           style={{
-            background: 'rgba(255,255,255,0.04)',
-            border: '1px solid rgba(255,255,255,0.08)',
+            background: 'var(--card)',
+            border: '1px solid var(--border)',
             borderRadius: 10,
             padding: 20,
           }}
@@ -4037,10 +4088,10 @@ function PowerBIModule({ projects }) {
                     marginTop: 3,
                   }}
                 >
-                  <span style={{ fontSize: 10, color: '#7D8590' }}>
+                  <span style={{ fontSize: 10, color: 'var(--muted)' }}>
                     {p.progress}% complete
                   </span>
-                  <span style={{ fontSize: 10, color: '#7D8590' }}>
+                  <span style={{ fontSize: 10, color: 'var(--muted)' }}>
                     {p.panels} panels
                   </span>
                 </div>
@@ -4051,8 +4102,8 @@ function PowerBIModule({ projects }) {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           <div
             style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'var(--card)',
+              border: '1px solid var(--border)',
               borderRadius: 10,
               padding: 20,
             }}
@@ -4084,8 +4135,8 @@ function PowerBIModule({ projects }) {
           </div>
           <div
             style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'var(--card)',
+              border: '1px solid var(--border)',
               borderRadius: 10,
               padding: 20,
             }}
@@ -4105,7 +4156,7 @@ function PowerBIModule({ projects }) {
                   display: 'flex',
                   justifyContent: 'space-between',
                   padding: '7px 0',
-                  borderBottom: '1px solid rgba(255,255,255,0.06)',
+                  borderBottom: '1px solid var(--border-sm)',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -4156,18 +4207,61 @@ export default function ASGRCPortal() {
   const [projects] = useState(INIT_PROJECTS)
   const [approvals, setApprovals] = useState(INIT_APPROVALS)
   const [openProjectId, setOpenProjectId] = useState(null)
+  const [dark, setDark] = useState(false)
 
   const openProject = useCallback((id) => setOpenProjectId(id), [])
   const closeProject = useCallback(() => setOpenProjectId(null), [])
   const openProj = projects.find((p) => p.id === openProjectId)
   const pendingCount = approvals.filter((a) => a.status !== 'approved').length
 
+  const isDark = dark
+  const cssVars = isDark
+    ? {
+        '--bg': '#0D1117',
+        '--surface': '#161B22',
+        '--border': 'rgba(255,255,255,0.09)',
+        '--border-sm': 'rgba(255,255,255,0.06)',
+        '--border-md': 'rgba(255,255,255,0.13)',
+        '--text': '#E6EDF3',
+        '--muted': '#7D8590',
+        '--card': 'rgba(255,255,255,0.04)',
+        '--card-dim': 'rgba(255,255,255,0.025)',
+        '--card-mid': 'rgba(255,255,255,0.06)',
+        '--depth': 'rgba(0,0,0,0.2)',
+        '--depth-2': 'rgba(0,0,0,0.3)',
+        '--hover': 'rgba(255,255,255,0.035)',
+        '--row-alt': 'rgba(255,255,255,0.025)',
+        '--faint': 'rgba(255,255,255,0.15)',
+        '--overlay': 'rgba(0,0,0,0.65)',
+        '--overlay-heavy': 'rgba(0,0,0,0.8)',
+      }
+    : {
+        '--bg': '#F4F6F9',
+        '--surface': '#FFFFFF',
+        '--border': 'rgba(0,0,0,0.09)',
+        '--border-sm': 'rgba(0,0,0,0.06)',
+        '--border-md': 'rgba(0,0,0,0.13)',
+        '--text': '#1C2128',
+        '--muted': '#57606A',
+        '--card': 'rgba(0,0,0,0.03)',
+        '--card-dim': 'rgba(0,0,0,0.015)',
+        '--card-mid': 'rgba(0,0,0,0.05)',
+        '--depth': 'rgba(0,0,0,0.04)',
+        '--depth-2': 'rgba(0,0,0,0.06)',
+        '--hover': 'rgba(0,0,0,0.03)',
+        '--row-alt': 'rgba(0,0,0,0.025)',
+        '--faint': 'rgba(0,0,0,0.12)',
+        '--overlay': 'rgba(0,0,0,0.5)',
+        '--overlay-heavy': 'rgba(0,0,0,0.7)',
+      }
+
   return (
     <div
       style={{
+        ...cssVars,
         fontFamily: 'system-ui,-apple-system,sans-serif',
-        background: '#0D1117',
-        color: '#E6EDF3',
+        background: 'var(--bg)',
+        color: 'var(--text)',
         height: '100vh',
         display: 'flex',
         flexDirection: 'column',
@@ -4177,8 +4271,8 @@ export default function ASGRCPortal() {
       {/* ── Header ── */}
       <header
         style={{
-          background: '#161B22',
-          borderBottom: '1px solid rgba(255,255,255,0.08)',
+          background: 'var(--surface)',
+          borderBottom: '1px solid var(--border)',
           padding: '0 16px',
           display: 'flex',
           alignItems: 'center',
@@ -4208,14 +4302,12 @@ export default function ASGRCPortal() {
           <div style={{ fontSize: 13, fontWeight: 700, lineHeight: 1.2 }}>
             ASGRC Portal
           </div>
-          <div style={{ fontSize: 10, color: '#7D8590', lineHeight: 1 }}>
+          <div style={{ fontSize: 10, color: 'var(--muted)', lineHeight: 1 }}>
             Phase 2 · Prototype v3
           </div>
         </div>
-        <div
-          style={{ height: 20, width: 1, background: 'rgba(255,255,255,0.08)' }}
-        />
-        <div style={{ fontSize: 13, color: '#7D8590' }}>
+        <div style={{ height: 20, width: 1, background: 'var(--border)' }} />
+        <div style={{ fontSize: 13, color: 'var(--muted)' }}>
           {MOD_TITLES[active]}
         </div>
         <div
@@ -4249,6 +4341,20 @@ export default function ASGRCPortal() {
               BC Connected
             </span>
           </div>
+          <button
+            onClick={() => setDark((d) => !d)}
+            style={{
+              background: 'none',
+              border: '1px solid var(--border)',
+              color: 'var(--muted)',
+              borderRadius: 6,
+              padding: '4px 10px',
+              fontSize: 12,
+              cursor: 'pointer',
+            }}
+          >
+            {dark ? '☾ Dark' : '☀ Light'}
+          </button>
           <div
             style={{
               width: 26,
@@ -4276,8 +4382,8 @@ export default function ASGRCPortal() {
           style={{
             width: 192,
             flexShrink: 0,
-            background: '#161B22',
-            borderRight: '1px solid rgba(255,255,255,0.08)',
+            background: 'var(--surface)',
+            borderRight: '1px solid var(--border)',
             padding: '12px 8px',
             display: 'flex',
             flexDirection: 'column',
@@ -4299,7 +4405,7 @@ export default function ASGRCPortal() {
                   borderRadius: 7,
                   border: 'none',
                   background: sel ? `${C.teal}20` : 'transparent',
-                  color: sel ? C.teal : '#7D8590',
+                  color: sel ? C.teal : 'var(--muted)',
                   fontWeight: sel ? 600 : 400,
                   fontSize: 12.5,
                   textAlign: 'left',
@@ -4347,12 +4453,18 @@ export default function ASGRCPortal() {
             style={{
               marginTop: 'auto',
               padding: 10,
-              background: 'rgba(0,0,0,0.3)',
+              background: 'var(--depth-2)',
               borderRadius: 7,
               fontSize: 11,
             }}
           >
-            <div style={{ color: '#7D8590', marginBottom: 6, fontWeight: 600 }}>
+            <div
+              style={{
+                color: 'var(--muted)',
+                marginBottom: 6,
+                fontWeight: 600,
+              }}
+            >
               API Status
             </div>
             {[
@@ -4367,7 +4479,7 @@ export default function ASGRCPortal() {
                   display: 'flex',
                   justifyContent: 'space-between',
                   marginBottom: 3,
-                  color: '#7D8590',
+                  color: 'var(--muted)',
                 }}
               >
                 <span>{s}</span>
