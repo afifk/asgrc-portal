@@ -1447,14 +1447,6 @@ function EngineeringPortalModule() {
   const statusColor = (s) =>
     ({ A: C.green, B: C.teal, C: C.red, D: C.red, pending: C.amber })[s] ||
     C.grey
-  const statusFull = (s) =>
-    ({
-      A: 'Approved (A)',
-      B: 'Approved w/ comments (B)',
-      C: 'Revise & resubmit (C)',
-      D: 'Rejected (D)',
-      pending: 'Submitted — awaiting review',
-    })[s] || s
 
   return (
     <div>
